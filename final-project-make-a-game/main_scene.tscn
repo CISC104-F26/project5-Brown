@@ -1,6 +1,63 @@
 [gd_scene format=3 uid="uid://bu8ppkrot11wm"]
 
 [ext_resource type="Script" uid="uid://c6oaijj8swb8e" path="res://main_scene.gd" id="1_0f027"]
+[ext_resource type="Texture2D" uid="uid://cjvlkx0d4uk7f" path="res://icon.svg" id="2_gyfs4"]
+[ext_resource type="Script" uid="uid://hnfubwooqarq" path="res://player.gd" id="3_d5x1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5clau"]
+size = Vector2(1402, 36)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5clau"]
+radius = 40.0
+height = 116.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijiyq"]
+size = Vector2(3, 683)
 
 [node name="Main_Scene" type="Node2D" unique_id=1151560623]
 script = ExtResource("1_0f027")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=2141637806]
+
+[node name="Placeholder_floor" type="Sprite2D" parent="Floor" unique_id=540166300]
+position = Vector2(600, 647)
+scale = Vector2(10.25, 0.42187485)
+texture = ExtResource("2_gyfs4")
+
+[node name="Collision_Floor" type="CollisionShape2D" parent="Floor" unique_id=450194818]
+position = Vector2(618, 660)
+shape = SubResource("RectangleShape2D_5clau")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1348944150]
+script = ExtResource("3_d5x1h")
+
+[node name="Placeholder_img" type="Sprite2D" parent="Player" unique_id=75584007]
+position = Vector2(501.5, 528.5)
+scale = Vector2(0.6484374, 0.9296875)
+texture = ExtResource("2_gyfs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1650789718]
+position = Vector2(505, 530)
+shape = SubResource("CapsuleShape2D_5clau")
+
+[node name="Wall_Left" type="StaticBody2D" parent="." unique_id=745539664]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Left" unique_id=1283816951]
+position = Vector2(-1.5, 331.5)
+shape = SubResource("RectangleShape2D_ijiyq")
+
+[node name="Placeholder_img2" type="Sprite2D" parent="Wall_Left" unique_id=1200930908]
+position = Vector2(4.4999995, 293)
+scale = Vector2(0.19531249, 5.5781245)
+texture = ExtResource("2_gyfs4")
+
+[node name="Wall_Right" type="StaticBody2D" parent="." unique_id=1818333058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall_Right" unique_id=511942641]
+position = Vector2(1153, 315)
+shape = SubResource("RectangleShape2D_ijiyq")
+
+[node name="Placeholder_img2" type="Sprite2D" parent="Wall_Right" unique_id=952908507]
+position = Vector2(1153, 332)
+scale = Vector2(0.19531249, 5.5781245)
+texture = ExtResource("2_gyfs4")

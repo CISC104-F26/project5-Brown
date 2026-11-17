@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://wrj687r04cc0"]
+
+[ext_resource type="Script" uid="uid://bn6yw21b6x5ge" path="res://control.gd" id="1_0fbet"]
+
+[node name="Respawn_Scene" type="Control" unique_id=2144386491]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbet")
+
+[node name="Game_Over" type="Label" parent="." unique_id=1676584219]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 78.0
+offset_right = 597.0
+offset_bottom = 101.0
+
+[node name="restart" type="Button" parent="." unique_id=304126920]
+layout_mode = 0
+offset_left = 132.00002
+offset_top = 223.00003
+offset_right = 247.00002
+offset_bottom = 270.40546
+scale = Vector2(3.0870452, 4.28221)
+theme_override_font_sizes/font_size = 27
+text = "Restart?"
+
+[node name="quit" type="Button" parent="." unique_id=3353291]
+layout_mode = 0
+offset_left = 650.00006
+offset_top = 223.0
+offset_right = 727.00006
+offset_bottom = 268.0
+scale = Vector2(4.959455, 4.5084195)
+theme_override_font_sizes/font_size = 27
+text = "Quit?"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

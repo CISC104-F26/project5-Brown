@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmvx486q2iq6y"]
+
+[ext_resource type="Texture2D" uid="uid://cjvlkx0d4uk7f" path="res://icon.svg" id="1_asmr2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5clau"]
+radius = 74.24284
+
+[node name="FallingObject_Scene" type="Node2D" unique_id=82418718]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=984642670]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=151728600]
+texture = ExtResource("1_asmr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2133054105]
+shape = SubResource("CircleShape2D_5clau")

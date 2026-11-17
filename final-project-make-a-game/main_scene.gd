@@ -1,5 +1,5 @@
 extends Node2D
-"Hey guys I did it"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
