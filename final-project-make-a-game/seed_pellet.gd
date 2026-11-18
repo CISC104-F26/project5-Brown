@@ -1,5 +1,5 @@
 extends RigidBody2D
-var move_speed = 20
+var move_speed = 350
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://bu8ppkrot11wm"]
 
 [ext_resource type="Script" uid="uid://c6oaijj8swb8e" path="res://main_scene.gd" id="1_0f027"]
-[ext_resource type="Texture2D" uid="uid://cjvlkx0d4uk7f" path="res://icon.svg" id="2_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://dappoccxdr6tq" path="res://export.png-2.webp" id="2_8mm7a"]
 [ext_resource type="Script" uid="uid://hnfubwooqarq" path="res://player.gd" id="3_d5x1h"]
+[ext_resource type="PackedScene" uid="uid://cimyaw2d0bxlr" path="res://pellet_scene.tscn" id="4_d5x1h"]
+[ext_resource type="Texture2D" uid="uid://4sgcm8ad13md" path="res://export.png.webp" id="5_hq1ik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5clau"]
 size = Vector2(1402, 36)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5clau"]
 radius = 40.0
-height = 116.0
+height = 144.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ijiyq"]
 size = Vector2(3, 683)
@@ -20,9 +22,9 @@ script = ExtResource("1_0f027")
 [node name="Floor" type="StaticBody2D" parent="." unique_id=2141637806]
 
 [node name="Placeholder_floor" type="Sprite2D" parent="Floor" unique_id=540166300]
-position = Vector2(600, 647)
-scale = Vector2(10.25, 0.42187485)
-texture = ExtResource("2_gyfs4")
+position = Vector2(585, 620.00006)
+scale = Vector2(0.54173917, 0.48500022)
+texture = ExtResource("2_8mm7a")
 
 [node name="Collision_Floor" type="CollisionShape2D" parent="Floor" unique_id=450194818]
 position = Vector2(618, 660)
@@ -30,14 +32,15 @@ shape = SubResource("RectangleShape2D_5clau")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1348944150]
 script = ExtResource("3_d5x1h")
+Seed_Pellet = ExtResource("4_d5x1h")
 
 [node name="Placeholder_img" type="Sprite2D" parent="Player" unique_id=75584007]
-position = Vector2(501.5, 528.5)
-scale = Vector2(0.6484374, 0.9296875)
-texture = ExtResource("2_gyfs4")
+position = Vector2(507, 539.5)
+scale = Vector2(0.2685026, 0.26833335)
+texture = ExtResource("5_hq1ik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1650789718]
-position = Vector2(505, 530)
+position = Vector2(505, 542)
 shape = SubResource("CapsuleShape2D_5clau")
 
 [node name="Wall_Left" type="StaticBody2D" parent="." unique_id=745539664]
@@ -47,9 +50,11 @@ position = Vector2(-1.5, 331.5)
 shape = SubResource("RectangleShape2D_ijiyq")
 
 [node name="Placeholder_img2" type="Sprite2D" parent="Wall_Left" unique_id=1200930908]
-position = Vector2(4.4999995, 293)
-scale = Vector2(0.19531249, 5.5781245)
-texture = ExtResource("2_gyfs4")
+process_priority = -1
+position = Vector2(20, 331.99997)
+rotation = 1.5707964
+scale = Vector2(0.30197275, 0.4253131)
+texture = ExtResource("2_8mm7a")
 
 [node name="Wall_Right" type="StaticBody2D" parent="." unique_id=1818333058]
 
@@ -58,6 +63,8 @@ position = Vector2(1153, 315)
 shape = SubResource("RectangleShape2D_ijiyq")
 
 [node name="Placeholder_img2" type="Sprite2D" parent="Wall_Right" unique_id=952908507]
-position = Vector2(1153, 332)
-scale = Vector2(0.19531249, 5.5781245)
-texture = ExtResource("2_gyfs4")
+process_priority = -1
+position = Vector2(1115, 315)
+rotation = -1.5707964
+scale = Vector2(0.30956376, 0.4607366)
+texture = ExtResource("2_8mm7a")

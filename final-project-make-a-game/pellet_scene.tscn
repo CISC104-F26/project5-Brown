@@ -1,28 +1,30 @@
 [gd_scene format=3 uid="uid://cimyaw2d0bxlr"]
 
 [ext_resource type="Script" uid="uid://egesbqypymb0" path="res://seed_pellet.gd" id="1_gljyo"]
-[ext_resource type="Texture2D" uid="uid://cjvlkx0d4uk7f" path="res://icon.svg" id="2_etieu"]
+[ext_resource type="Texture2D" uid="uid://bke4j7bx8mkag" path="res://seed.png" id="2_gljyo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5clau"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_5clau"]
+[sub_resource type="QuadMesh" id="QuadMesh_7ycvg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ijiyq"]
+radius = 20.415846
 
 [node name="Pellet_Scene" type="Node2D" unique_id=852138300]
 
 [node name="Seed_Pellet" type="RigidBody2D" parent="." unique_id=1196154231]
-scale = Vector2(2.519998, 3.1200004)
+position = Vector2(456, 253)
 physics_material_override = SubResource("PhysicsMaterial_5clau")
 gravity_scale = 0.0
 script = ExtResource("1_gljyo")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Seed_Pellet" unique_id=1633590946]
-position = Vector2(-2.0861626e-07, 1.0000024)
-scale = Vector2(20.022678, 20.000006)
-mesh = SubResource("SphereMesh_5clau")
-texture = ExtResource("2_etieu")
+position = Vector2(1.3662202, 0.82692575)
+scale = Vector2(49.938072, -46.662052)
+mesh = SubResource("QuadMesh_7ycvg")
+texture = ExtResource("2_gljyo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Seed_Pellet" unique_id=1990163477]
-position = Vector2(0, 1)
+position = Vector2(1.999992, 5.4836273e-06)
+scale = Vector2(0.91338915, 1.0528458)
 shape = SubResource("CircleShape2D_ijiyq")
